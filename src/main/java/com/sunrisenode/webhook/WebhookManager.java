@@ -15,7 +15,6 @@ public class WebhookManager {
             return;
         }
         WebhookClientBuilder builder = new WebhookClientBuilder(input);
-        WebhookClient client = builder.build();
 
         builder.setThreadFactory(job -> {
             Thread thread = new Thread(job);
@@ -24,6 +23,7 @@ public class WebhookManager {
             return thread;
         });
         builder.setWait(true);
+        WebhookClient client = builder.build();
         webhooks.put(id, client);
     }
 

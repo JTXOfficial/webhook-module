@@ -26,7 +26,7 @@ public class SendWebhook extends SpecificBotEffect {
         System.out.println("Registering ...");
         Skript.registerEffect(
                 SendWebhook.class,
-                "make [the] [webhook] [(named|with name)] %string% send [the] [(message|text|webhook message)] %string/webhookmessagebuilder/embed%");
+                "make [the] [webhook] [(named|with name)] %string% send [the] [(message|text|webhook message)] %string/webhookmessagebuilder/embedbuilder%");
     }
 
     private Expression<String> exprName;
@@ -34,7 +34,7 @@ public class SendWebhook extends SpecificBotEffect {
 
     @Override
     @SuppressWarnings("unchecked")
-    public void runEffect(Event event,  @NotNull Bot bot) {
+    public void runEffect(Event event, Bot bot) {
         String name = exprName.getSingle(event);
         Object message = exprMessage.getSingle(event);
 
@@ -67,6 +67,6 @@ public class SendWebhook extends SpecificBotEffect {
 
     @Override
     public String toString(@NotNull Event event, boolean b) {
-        return "make the webhook " + exprName.getSingle(event) + " send the message " + exprMessage.getSingle(event);
+        return "make the webhook " + exprName.toString(event, b) + " send the message " + exprMessage.toString(event, b);
     }
 }

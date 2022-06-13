@@ -10,6 +10,7 @@ import ch.njol.util.Kleenean;
 import com.sunrisenode.webhook.Webhook;
 import info.itsthesky.disky.api.skript.SpecificBotEffect;
 import info.itsthesky.disky.core.Bot;
+import info.itsthesky.disky.core.Utils;
 import org.bukkit.event.Event;
 import org.jetbrains.annotations.NotNull;
 
@@ -30,7 +31,7 @@ public class RegisterWebhook extends SpecificBotEffect {
 
     @SuppressWarnings("unchecked")
     @Override
-    public void runEffect(@NotNull Event event, @NotNull Bot bot) {
+    public void runEffect(Event event, Bot bot) {
         String name = exprName.getSingle(event);
         String url = exprURL.getSingle(event);
         if (name == null || url == null) return;
@@ -47,6 +48,6 @@ public class RegisterWebhook extends SpecificBotEffect {
 
     @Override
     public String toString(@NotNull Event event, boolean b) {
-        return "register webhook named " + exprName.getSingle(event) + " using url " + exprURL.getSingle(event);
+        return "register webhook named " + exprName.toString(event, b) + " using url " + exprURL.toString(event, b);
     }
 }
