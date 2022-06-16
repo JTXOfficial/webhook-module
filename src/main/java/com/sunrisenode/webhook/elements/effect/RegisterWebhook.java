@@ -10,7 +10,6 @@ import ch.njol.util.Kleenean;
 import com.sunrisenode.webhook.Webhook;
 import info.itsthesky.disky.api.skript.SpecificBotEffect;
 import info.itsthesky.disky.core.Bot;
-import info.itsthesky.disky.core.Utils;
 import org.bukkit.event.Event;
 import org.jetbrains.annotations.NotNull;
 

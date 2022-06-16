@@ -1,4 +1,4 @@
-package com.sunrisenode.webhook.elements.expressions;
+package com.sunrisenode.webhook.elements.scope;
 
 import ch.njol.skript.Skript;
 import ch.njol.skript.doc.Description;
@@ -9,21 +9,18 @@ import ch.njol.skript.lang.SkriptParser;
 import ch.njol.skript.lang.util.SimpleExpression;
 import ch.njol.util.Kleenean;
 import club.minnced.discord.webhook.send.WebhookMessageBuilder;
-import com.sunrisenode.webhook.elements.effect.MultipleWebhookMessage;
 import org.bukkit.event.Event;
 import org.jetbrains.annotations.Nullable;
 
 
 @Name("Retrieve Last Webhook Message Builder")
 @Description("Returns the last webhook message builder.")
-public class RetrieveLastWebhookMessageBuilder extends SimpleExpression<WebhookMessageBuilder> {
+public class ExprLastWebhookMessageBuilder extends SimpleExpression<WebhookMessageBuilder> {
 
     public static void load() {
         System.out.println("Registering ...");
-
-        //register expression
         Skript.registerExpression(
-                RetrieveLastWebhookMessageBuilder.class, WebhookMessageBuilder.class, ExpressionType.SIMPLE, "retrieve last webhook message builder");
+                ExprLastWebhookMessageBuilder.class, WebhookMessageBuilder.class, ExpressionType.SIMPLE, "[the] [last] [(generated|created)] webhook [(msg|message)] [builder]");
     }
 
     @Override
@@ -34,7 +31,7 @@ public class RetrieveLastWebhookMessageBuilder extends SimpleExpression<WebhookM
     @Nullable
     @Override
     protected WebhookMessageBuilder[] get(Event e) {
-        return new WebhookMessageBuilder[]{MultipleWebhookMessage.lastBuilder};
+        return new WebhookMessageBuilder[]{ScopeWebhookMessage.lastBuilder};
     }
 
     @Override

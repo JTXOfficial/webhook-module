@@ -27,7 +27,6 @@ public class WebhookManager {
         webhooks.put(id, client);
     }
 
-    // get webhook client from hashmap
     public WebhookClient getWebhook(String id) {
         if (!webhooks.containsKey(id)) {
             Skript.error("Webhook with id " + id + " does not exist. Please register it first.");
