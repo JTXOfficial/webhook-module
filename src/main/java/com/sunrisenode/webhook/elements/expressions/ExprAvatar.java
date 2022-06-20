@@ -1,13 +1,13 @@
 package com.sunrisenode.webhook.elements.expressions;
 
 import ch.njol.skript.classes.Changer;
+import ch.njol.skript.doc.Description;
 import ch.njol.skript.doc.Examples;
+import ch.njol.skript.doc.Name;
 import ch.njol.skript.expressions.base.SimplePropertyExpression;
 import ch.njol.util.coll.CollectionUtils;
 import club.minnced.discord.webhook.send.WebhookMessageBuilder;
 import com.sunrisenode.webhook.elements.scope.ScopeWebhookMessage;
-import jdk.jfr.Description;
-import jdk.jfr.Name;
 import net.dv8tion.jda.api.entities.Webhook;
 import org.bukkit.event.Event;
 import org.jetbrains.annotations.Nullable;

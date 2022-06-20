@@ -51,7 +51,6 @@ public class SendWebhook extends SpecificBotEffect {
             client.send(message.toString());
         } else if (message instanceof WebhookMessageBuilder) {
             client.send(((WebhookMessageBuilder) message).build());
-            System.out.println("w");
         } else if (message instanceof EmbedBuilder) {
             client.send(WebhookEmbedBuilder.fromJDA(((EmbedBuilder) message).build()).build());
         } else {

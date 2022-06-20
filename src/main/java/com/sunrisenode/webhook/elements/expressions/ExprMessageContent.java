@@ -12,7 +12,7 @@ public class ExprMessageContent extends SimplePropertyExpression<Object, String>
 
     public static void load() {
         System.out.println("Registering ...");
-        register(ExprMessageContent.class, String.class, "[message] content", "webhookmessagebuilder");
+        register(ExprMessageContent.class, String.class, "[the] [message] content", "webhookmessagebuilder");
     }
 
 
